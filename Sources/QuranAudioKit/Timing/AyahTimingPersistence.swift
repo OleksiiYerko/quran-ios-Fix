@@ -30,17 +30,17 @@ protocol AyahTimingPersistence {
 
 struct SQLiteAyahTimingPersistence: AyahTimingPersistence, ReadonlySQLitePersistence {
     private struct Column {
-        static let sura = Expression<Int>("sura")
-        static let ayah = Expression<Int>("ayah")
-        static let time = Expression<Int>("time")
+        static let sura: SQLite.Expression<Int> = Expression<Int>("sura")
+        static let ayah: SQLite.Expression<Int> = Expression<Int>("ayah")
+        static let time: SQLite.Expression<Int> = Expression<Int>("time")
     }
 
     private let timingsTable = Table("timings")
 
     private struct Properties {
         static let table = Table("properties")
-        static let property = Expression<String>("property")
-        static let value = Expression<String>("value")
+        static let property: SQLite.Expression<String> = Expression<String>("property")
+        static let value: SQLite.Expression<String> = Expression<String>("value")
     }
 
     let filePath: String

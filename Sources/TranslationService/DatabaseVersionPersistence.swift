@@ -28,8 +28,8 @@ protocol DatabaseVersionPersistence {
 struct SQLiteDatabaseVersionPersistence: DatabaseVersionPersistence, ReadonlySQLitePersistence {
     private struct Properties {
         static let table = Table("properties")
-        static let property = Expression<String>("property")
-        static let value = Expression<String>("value")
+        static let property: SQLite.Expression<String> = Expression<String>("property")
+        static let value: SQLite.Expression<String> = Expression<String>("value")
     }
 
     let filePath: String

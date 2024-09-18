@@ -31,11 +31,11 @@ class SQLiteWordTextPersistence: ReadonlySQLitePersistence, WordTextPersistence 
     private struct Database {
         static let wordsTable = Table("words")
         struct Columns {
-            static let word = Expression<Int>("word_position")
-            static let translation = Expression<String?>("translation")
-            static let transliteration = Expression<String?>("transliteration")
-            static let sura = Expression<Int>("sura")
-            static let ayah = Expression<Int>("ayah")
+            static let word: SQLite.Expression<Int> = Expression<Int>("word_position")
+            static let translation: SQLite.Expression<String?> = Expression<String?>("translation")
+            static let transliteration: SQLite.Expression<String?> = Expression<String?>("transliteration")
+            static let sura: SQLite.Expression<Int> = Expression<Int>("sura")
+            static let ayah: SQLite.Expression<Int> = Expression<Int>("ayah")
         }
     }
 
@@ -53,7 +53,7 @@ class SQLiteWordTextPersistence: ReadonlySQLitePersistence, WordTextPersistence 
         try wordText(word, textColumn: Database.Columns.transliteration)
     }
 
-    private func wordText(_ word: Word, textColumn: Expression<String?>) throws -> String? {
+	private func wordText(_ word: Word, textColumn: SQLite.Expression<String?>) throws -> String? {
         try run { connection in
             let query = Database.wordsTable
                 .select(textColumn)
@@ -69,7 +69,7 @@ class SQLiteWordTextPersistence: ReadonlySQLitePersistence, WordTextPersistence 
         }
     }
 
-    private func rowsToText(_ rows: AnySequence<Row>, textColumn: Expression<String?>) -> [String?] {
+	private func rowsToText(_ rows: AnySequence<Row>, textColumn: SQLite.Expression<String?>) -> [String?] {
         var result: [String?] = []
         for row in rows {
             result.append(row[textColumn])

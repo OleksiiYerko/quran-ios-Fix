@@ -45,8 +45,8 @@ class SQLiteTranslationVerseTextPersistence: ReadonlySQLitePersistence, Translat
     }
 
     private func textFromRow(_ row: Row) throws -> RawTranslationText {
-        let stringText = Expression<String?>("text")
-        let intText = Expression<Int?>("text")
+        let stringText: SQLite.Expression<String?> = Expression<String?>("text")
+        let intText: SQLite.Expression<Int?> = Expression<Int?>("text")
         let quran = persistence.quran
 
         if let stringText = row[stringText] {

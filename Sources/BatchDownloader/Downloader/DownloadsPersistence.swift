@@ -39,18 +39,18 @@ final class SqliteDownloadsPersistence: DownloadsPersistence, SQLitePersistence 
 
     private struct Downloads {
         static let table = Table("download")
-        static let id = Expression<Int64>("id")
-        static let taskId = Expression<Int?>("taskId")
-        static let url = Expression<String>("url")
-        static let resumePath = Expression<String>("resumePath")
-        static let destinationPath = Expression<String>("destinationPath")
-        static let status = Expression<Int>("status")
-        static let batchId = Expression<Int64>("batchId")
+		static let id: SQLite.Expression<Int64> = Expression<Int64>("id")
+        static let taskId: SQLite.Expression<Int?> = Expression<Int?>("taskId")
+        static let url: SQLite.Expression<String> = Expression<String>("url")
+        static let resumePath: SQLite.Expression<String> = Expression<String>("resumePath")
+        static let destinationPath: SQLite.Expression<String> = Expression<String>("destinationPath")
+        static let status: SQLite.Expression<Int> = Expression<Int>("status")
+        static let batchId: SQLite.Expression<Int64> = Expression<Int64>("batchId")
     }
 
     private struct Batches {
         static let table = Table("batch")
-        static let id = Expression<Int64>("id")
+        static let id: SQLite.Expression<Int64> = Expression<Int64>("id")
     }
 
     init(filePath: String) {

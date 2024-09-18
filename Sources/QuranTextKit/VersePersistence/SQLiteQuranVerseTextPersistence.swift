@@ -51,7 +51,7 @@ struct SQLiteQuranVerseTextPersistence: VerseTextPersistence {
     }
 
     private func textFromRow(_ row: Row) -> String {
-        let text = Expression<String>("text")
+        let text: SQLite.Expression<String> = Expression<String>("text")
         return row[text]
     }
 }

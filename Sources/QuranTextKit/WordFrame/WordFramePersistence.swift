@@ -29,16 +29,16 @@ protocol WordFramePersistence {
 
 struct SQLiteWordFramePersistence: WordFramePersistence, ReadonlySQLitePersistence {
     private struct Columns {
-        let id = Expression<Int>("glyph_id")
-        let page = Expression<Int>("page_number")
-        let sura = Expression<Int>("sura_number")
-        let ayah = Expression<Int>("ayah_number")
-        let line = Expression<Int>("line_number")
-        let position = Expression<Int>("position")
-        let minX = Expression<Int>("min_x")
-        let maxX = Expression<Int>("max_x")
-        let minY = Expression<Int>("min_y")
-        let maxY = Expression<Int>("max_y")
+        let id: SQLite.Expression<Int> = Expression<Int>("glyph_id")
+        let page: SQLite.Expression<Int> = Expression<Int>("page_number")
+        let sura: SQLite.Expression<Int> = Expression<Int>("sura_number")
+        let ayah: SQLite.Expression<Int> = Expression<Int>("ayah_number")
+        let line: SQLite.Expression<Int> = Expression<Int>("line_number")
+        let position: SQLite.Expression<Int> = Expression<Int>("position")
+        let minX: SQLite.Expression<Int> = Expression<Int>("min_x")
+        let maxX: SQLite.Expression<Int> = Expression<Int>("max_x")
+        let minY: SQLite.Expression<Int> = Expression<Int>("min_y")
+        let maxY: SQLite.Expression<Int> = Expression<Int>("max_y")
     }
 
     private let glyphsTable = Table("glyphs")

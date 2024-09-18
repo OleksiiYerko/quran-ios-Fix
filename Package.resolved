@@ -29,6 +29,24 @@
         }
       },
       {
+        "package": "swift-snapshot-testing",
+        "repositoryURL": "https://github.com/pointfreeco/swift-snapshot-testing.git",
+        "state": {
+          "branch": null,
+          "revision": "7b0bbbae90c41f848f90ac7b4df6c4f50068256d",
+          "version": "1.17.5"
+        }
+      },
+      {
+        "package": "swift-syntax",
+        "repositoryURL": "https://github.com/swiftlang/swift-syntax",
+        "state": {
+          "branch": null,
+          "revision": "cb53fa1bd3219b0b23ded7dfdd3b2baff266fd25",
+          "version": "600.0.0"
+        }
+      },
+      {
         "package": "Zip",
         "repositoryURL": "https://github.com/marmelroy/Zip",
         "state": {

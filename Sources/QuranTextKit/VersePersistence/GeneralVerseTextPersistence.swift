@@ -11,9 +11,9 @@ import SQLitePersistence
 
 struct GeneralVerseTextPersistence: ReadonlySQLitePersistence {
     struct Columns {
-        static let sura = Expression<Int>("sura")
-        static let ayah = Expression<Int>("ayah")
-        static let text = Expression<String>("text")
+        static let sura: SQLite.Expression<Int> = Expression<Int>("sura")
+        static let ayah: SQLite.Expression<Int> = Expression<Int>("ayah")
+        static let text: SQLite.Expression<String> = Expression<String>("text")
     }
 
     let filePath: String

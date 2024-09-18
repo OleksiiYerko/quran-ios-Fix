@@ -39,15 +39,15 @@ struct SQLiteActiveTranslationsPersistence: ActiveTranslationsPersistence, SQLit
 
     private struct Translations {
         static let table = Table("translations")
-        static let id = Expression<Int>("_ID")
-        static let name = Expression<String>("name")
-        static let translator = Expression<String?>("translator")
-        static let translatorForeign = Expression<String?>("translator_foreign")
-        static let fileURL = Expression<String>("fileURL")
-        static let fileName = Expression<String>("filename")
-        static let languageCode = Expression<String>("languageCode")
-        static let version = Expression<Int>("version")
-        static let installedVersion = Expression<Int?>("installedVersion")
+        static let id: SQLite.Expression<Int> = Expression<Int>("_ID")
+        static let name: SQLite.Expression<String> = Expression<String>("name")
+        static let translator: SQLite.Expression<String?> = Expression<String?>("translator")
+        static let translatorForeign: SQLite.Expression<String?> = Expression<String?>("translator_foreign")
+        static let fileURL: SQLite.Expression<String> = Expression<String>("fileURL")
+        static let fileName: SQLite.Expression<String> = Expression<String>("filename")
+        static let languageCode: SQLite.Expression<String> = Expression<String>("languageCode")
+        static let version: SQLite.Expression<Int> = Expression<Int>("version")
+        static let installedVersion: SQLite.Expression<Int?> = Expression<Int?>("installedVersion")
     }
 
     func onCreate(connection: Connection) throws {
